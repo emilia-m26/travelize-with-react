@@ -38,7 +38,7 @@ function App(){
       {destinations.length}
 
         {Object.values(destinations).map((destination) => (
-          <li>{destination.location} - {destination.id}</li>
+          <li key={destination.id}>{destination.location} - {destination.id}</li>
         ))}
       </>
     )
