@@ -19,26 +19,27 @@ import './App.css';
 const fetchURL = "http://localhost:3001/destinations";
 
 function App(){
-  const [destinations, setDestinations] = useState({});
+  const [destinations, setDestinations] = useState([]);
   useEffect(() => {
     fetch(fetchURL)
     .then(res => 
       //console.log(res.json()))
       res.json())
-    .then(res => JSON.stringify(res))
+   //.then(res => JSON.stringify(res))
     .then(res => setDestinations(res))
     //console.log(res))
-  })
-  console.log(destinations)
+  },[])
+  //console.log(destinations.length)
+  console.log(Object.keys(destinations))
     return (
       <>
       TESTING
       
-      {/* {destinations} */}
+      {destinations.length}
 
-        {Object.keys(destinations).map((destination) => 
-        <li key={destination.id}>{destination.location}-{destination.id}</li>
-        )}
+        {Object.values(destinations).map((destination) => (
+          <li>{destination.location} - {destination.id}</li>
+        ))}
       </>
     )
 }
