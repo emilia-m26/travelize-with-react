@@ -16,19 +16,29 @@ import './App.css';
 //   );
 // }
 
-const fetchURL = "http://localhost:3001";
+const fetchURL = "http://localhost:3001/destinations";
 
 function App(){
-  const [state, setState] = useState([]);
+  const [destinations, setDestinations] = useState({});
   useEffect(() => {
-    fetch(fetchURL).then(
-      res => setState(res.data)
-    )
+    fetch(fetchURL)
+    .then(res => 
+      //console.log(res.json()))
+      res.json())
+    .then(res => JSON.stringify(res))
+    .then(res => setDestinations(res))
+    //console.log(res))
   })
+  console.log(destinations)
     return (
-      //console.log(state)
       <>
-       {state.map(d => <div>{d}</div>)}
+      TESTING
+      
+      {/* {destinations} */}
+
+        {Object.keys(destinations).map((destination) => 
+        <li key={destination.id}>{destination.location}-{destination.id}</li>
+        )}
       </>
     )
 }
