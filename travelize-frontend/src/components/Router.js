@@ -6,6 +6,7 @@ import Signup from './Signup';
 import Goals from './Goals';
 import Passport from './Paspport';
 import NotFound from './NotFound';
+import App from '../App';
 
 
 
@@ -13,6 +14,7 @@ const Router = () => (
     <BrowserRouter>
     <Switch>
         <Route exact path="/" component={About}/>
+        <Route exact path="/tester" component={App}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/goals" component={Goals}/>

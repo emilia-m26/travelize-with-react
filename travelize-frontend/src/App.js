@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import { useState, useEffect }from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function App() {
+//   const [goal, setGoal] = React.useState({
+//       name: 3,
+//       email: "emi@tester.com"
+//   });
+//   return (
+//     <div className="App">
+//      {goal.name}
+//      <button onClick={() => setGoal({...goal, name: goal.name +1})}>Update Name</button>
+//      <br></br>
+//      {goal.email}
+//     </div>
+//   );
+// }
+
+const fetchURL = "http://localhost:3001";
+
+function App(){
+  const [state, setState] = useState([]);
+  useEffect(() => {
+    fetch(fetchURL).then(
+      res => setState(res.data)
+    )
+  })
+    return (
+      //console.log(state)
+      <>
+       {state.map(d => <div>{d}</div>)}
+      </>
+    )
 }
 
 export default App;
