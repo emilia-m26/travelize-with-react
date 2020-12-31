@@ -30,15 +30,16 @@ function App(){
     //console.log(res))
   },[])
   //console.log(destinations.length)
-  console.log(Object.keys(destinations))
+  console.log(Object.values(destinations))
     return (
       <>
       TESTING
       
       {destinations.length}
 
+
         {Object.values(destinations).map((destination) => (
-          <li key={destination.id}>{destination.location} - {destination.id}</li>
+          <li key={destination.id}>{destination.location} - {destination.id} * {destination.goal.name}</li>
         ))}
       </>
     )
