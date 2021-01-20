@@ -1,48 +1,72 @@
 import { useState, useEffect }from 'react';
 import './App.css';
 
-// function App() {
-//   const [goal, setGoal] = React.useState({
-//       name: 3,
-//       email: "emi@tester.com"
-//   });
-//   return (
-//     <div className="App">
-//      {goal.name}
-//      <button onClick={() => setGoal({...goal, name: goal.name +1})}>Update Name</button>
-//      <br></br>
-//      {goal.email}
-//     </div>
-//   );
+// const fetchURL = "http://localhost:3001/destinations";
+
+// function App(){
+//   const [destinations, setDestinations] = useState([]);
+//   useEffect(() => {
+//     fetch(fetchURL)
+//     .then(res => 
+//       //console.log(res.json()))
+//       res.json())
+//    //.then(res => JSON.stringify(res))
+//     .then(res => setDestinations(res))
+//     //console.log(res))
+//   },[])
+//   //console.log(destinations.length)
+//   console.log(Object.values(destinations))
+//     return (
+//       <>
+//       TESTING
+      
+//       {destinations.length}
+
+
+
+//         {Object.values(destinations).map((destination) => (
+//           <li key={destination.id}>{destination.location} - {destination.id} * {destination.goal.name}</li>
+//         ))}
+
+//       </>
+//     )
 // }
 
-const fetchURL = "http://localhost:3001/destinations";
+const fetchGoalURL = "http://localhost:3001/goals";
 
 function App(){
-  const [destinations, setDestinations] = useState([]);
+  const [goals, setGoals] = useState([]);
   useEffect(() => {
-    fetch(fetchURL)
+    fetch(fetchGoalURL)
     .then(res => 
       //console.log(res.json()))
       res.json())
    //.then(res => JSON.stringify(res))
-    .then(res => setDestinations(res))
+    .then(res => setGoals(res))
     //console.log(res))
   },[])
   //console.log(destinations.length)
-  console.log(Object.values(destinations))
+  //console.log(Object.values(goals))
     return (
       <>
-      TESTING
+      TESTING 🤟 
       
-      {destinations.length}
+      {goals.length}
 
 
-        {Object.values(destinations).map((destination) => (
-          <li key={destination.id}>{destination.location} - {destination.id} * {destination.goal.name}</li>
+
+        {Object.values(goals).map((goal) => (
+          <li key={goal.id}>{goal.name} - {goal.destinations.length} - {goal.user.name}
+          {goal.destinations.map((destination) =>
+          //console.log(destination.location)
+          <li>{destination.location}</li>
+            )}
+          </li>
         ))}
+
       </>
     )
 }
+
 
 export default App;
