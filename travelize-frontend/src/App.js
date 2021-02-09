@@ -54,16 +54,16 @@ function App(){
       {goals.length}
 
 
-
+      <ol>
         {Object.values(goals).map((goal) => (
           <li key={goal.id}>{goal.name} - {goal.destinations.length} - {goal.user.name}
           {goal.destinations.map((destination) =>
           //console.log(destination.location)
-          <li>{destination.location}</li>
+          <ul key={destination.id}>{destination.location}</ul>
             )}
           </li>
         ))}
-
+      </ol>
       </>
     )
 }
