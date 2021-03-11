@@ -4,16 +4,20 @@ import About from './About';
 import Login from './Login';
 import Signup from './Signup';
 import Goals from './Goals';
-import Passport from './Paspport';
+import Passport from './Passport';
 import NotFound from './NotFound';
 import App from '../App';
+import Layout from './Layout.js'
 
 
 
 const Router = () => (
+    <>
+    
     <BrowserRouter>
     <Switch>
         <Route exact path="/" component={About}/>
+        
         <Route exact path="/tester" component={App}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={Signup}/>
@@ -21,8 +25,11 @@ const Router = () => (
          {/* <Route path="/goals/:goalId" component={} /> */}
         <Route exact path="/passport" component={Passport}/>
         <Route component={NotFound} />
+        
     </Switch>
     </BrowserRouter>
+    
+    </>
 
 )
 

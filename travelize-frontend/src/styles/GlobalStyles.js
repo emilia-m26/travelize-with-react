@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle }  from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -6,10 +6,9 @@ const GlobalStyles = createGlobalStyle`
     background-position: center;
     background-size: cover;
   }
-
-
-
-
+  div {
+    background: white;
+  }
 `;
 
 export default GlobalStyles;

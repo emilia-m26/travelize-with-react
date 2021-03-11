@@ -1,5 +1,6 @@
 import { useState, useEffect }from 'react';
 import './App.css';
+import Layout from './components/Layout.js'
 
 // const fetchURL = "http://localhost:3001/destinations";
 
@@ -49,6 +50,8 @@ function App(){
   //console.log(Object.values(goals))
     return (
       <>
+      <Layout>
+      <div>
       TESTING 🤟 
       
       {goals.length}
@@ -64,7 +67,10 @@ function App(){
           </li>
         ))}
       </ol>
+      </div>
+      </Layout>
       </>
+     
     )
 }
 

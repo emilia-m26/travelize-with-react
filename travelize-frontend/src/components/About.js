@@ -22,7 +22,8 @@ const AboutStyles = styled.div`
     height: 100%;
     color: white;
     div {
-        background-color: red;
+        background-color: lightGrey;
+        
     }
     .blue {
         color: gold;
