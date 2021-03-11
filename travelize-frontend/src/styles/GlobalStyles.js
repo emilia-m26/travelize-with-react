@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     background-image: url('images/pattern-back-2.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
   }
   
 `;
