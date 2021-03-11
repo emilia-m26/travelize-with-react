@@ -4,7 +4,7 @@ export default function Footer() {
     return (
 
         <footer>
-            FOOTER
+         <p> &copy; Travelize {new Date().getFullYear()}</p>
         </footer>
     )
 }
