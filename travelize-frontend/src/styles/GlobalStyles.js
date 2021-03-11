@@ -6,9 +6,7 @@ const GlobalStyles = createGlobalStyle`
     background-position: center;
     background-size: cover;
   }
-  div {
-    background: white;
-  }
+  
 `;
 
 export default GlobalStyles;
