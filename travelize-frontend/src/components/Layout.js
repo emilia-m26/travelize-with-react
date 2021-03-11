@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles'
+import Nav from './Nav.js';
+import Footer from './Footer.js';
 import stripes from '../assets/images/stripes2.jpg';
+
 
 const SiteBorderStyles = styled.div`
     max-width: 1000px;
@@ -31,7 +34,9 @@ export default function Layout({ children }) {
             
               <SiteBorderStyles>
               <ContentStyles>
+                  <Nav />
                {children}
+               <Footer />
                </ContentStyles>
             </SiteBorderStyles>
     </>
